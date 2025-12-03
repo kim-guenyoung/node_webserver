@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Attendance API
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /auth/login:
+    post:
+      summary: Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: 로그인 성공
+  /courses:
+    get:
+      summary: Get courses
+      responses:
+        '200':
+          description: 과목 목록
